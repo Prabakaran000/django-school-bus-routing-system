@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add STUDENT</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <h1>Add STUDENT</h1>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <!-- Form fields wrapped inside a Bootstrap form-group -->
+            <div class="form-group">
+                <!-- Each form field is styled as a Bootstrap form-control -->
+                {{ form.student_id.label_tag }}
+                {{ form.student_id }}
+                <div class="invalid-feedback">
+                    {{ form.student_id.errors }}
+                </div>
+            </div>
+            <div class="form-group">
+                <!-- Each form field is styled as a Bootstrap form-control -->
+                {{ form.std_name.label_tag }}
+                {{ form.std_name }}
+                <div class="invalid-feedback">
+                    {{ form.std_name.errors }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.std_age.label_tag }}
+                {{ form.std_age }}
+                <div class="invalid-feedback">
+                    {{ form.std_age.errors }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.father_name.label_tag }}
+                {{ form.father_name }}
+                <div class="invalid-feedback">
+                    {{ form.father_name.errors }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form.location.label_tag }}
+                {{ form.location }}
+                <div class="invalid-feedback">
+                    {{ form.location.errors }}
+                </div>
+            </div>
+
+            <!-- Submit button styled as a Bootstrap button -->
+            <button type="submit" class="btn btn-primary">Add routes</button>
+        </form>
+    </div>
+    {% endblock %}
+    <!-- Include Bootstrap JS and any other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+</head>
+<body>
+    <h1>Bus Details</h1>
+    {% if bus %}
+        <h2>Bus Number: {{ bus.bus_number }}</h2>
+        <p>Route Number: {{ bus.route_number }}</p>
+        <p>Capacity: {{ bus.capacity }}</p>
+        <p>Driver Name: {{ bus.driver_name }}</p>
+        {% if student_details %}
+            <h2>Students</h2>
+            <ul>
+                {% for student_id, details in student_details.items %}
+                    <li>
+                        <h3>Student ID: {{ student_id }}</h3>
+                        <p>Name: {{ details.name }}</p>
+                        <p>Age: {{ details.age }}</p>
+                        <p>Father's Name: {{ details.father_name }}</p>
+                        <p>Location: {{ details.location }}</p>
+                        <p>Route Number: {{ details.route_number }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No students found for this bus.</p>
+        {% endif %}
+    {% else %}
+        <p>The bus with the given number does not exist.</p>
+    {% endif %}
+</body>
+</html>

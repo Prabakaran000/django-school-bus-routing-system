@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Home - My Website{% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h1>List of Buses</h1>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Route Number</th>
+                    <th>Start From</th>
+                    <th>End From</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for routeses in routes %}
+                <tr>
+                    <td>{{ routeses.route_number }}</td>
+                    <td>{{ routeses.start_from }}</td>
+                    <td>{{ routeses.end_from }}</td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No buses found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

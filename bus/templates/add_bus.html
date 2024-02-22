@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Bus</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <h1>Add Bus</h1>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td>{{ form.bus_number.label_tag }}</td>
+                    <td>{{ form.bus_number }}</td>
+                    <td class="invalid-feedback">{{ form.bus_number.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.route_number.label_tag }}</td>
+                    <td>{{ form.route_number }}</td>
+                    <td class="invalid-feedback">{{ form.route_number.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.capacity.label_tag }}</td>
+                    <td>{{ form.capacity }}</td>
+                    <td class="invalid-feedback">{{ form.capacity.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.driver_name.label_tag }}</td>
+                    <td>{{ form.driver_name }}</td>
+                    <td class="invalid-feedback">{{ form.driver_name.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.student_id.label_tag }}</td>
+                    <td>{{ form.student_id }}</td>
+                    <td class="invalid-feedback">{{ form.student_id.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.std_name.label_tag }}</td>
+                    <td>{{ form.std_name }}</td>
+                    <td class="invalid-feedback">{{ form.std_name.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.std_age.label_tag }}</td>
+                    <td>{{ form.std_age }}</td>
+                    <td class="invalid-feedback">{{ form.std_age.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.father_name.label_tag }}</td>
+                    <td>{{ form.father_name }}</td>
+                    <td class="invalid-feedback">{{ form.father_name.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.location.label_tag }}</td>
+                    <td>{{ form.location }}</td>
+                    <td class="invalid-feedback">{{ form.location.errors }}</td>
+                </tr>
+            </table>
+            <!-- Submit button styled as a Bootstrap button -->
+            <button type="submit" class="btn btn-primary">Add Bus</button>
+        </form>
+    </div>
+    {% endblock %}
+    <!-- Include Bootstrap JS and any other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

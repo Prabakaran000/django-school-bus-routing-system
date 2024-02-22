@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADD ROUTES</title>
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container mt-5">
+        <h1>Add ROUTES</h1>
+        <form method="post" class="needs-validation" novalidate>
+            {% csrf_token %}
+            <table class="table">
+                <tr>
+                    <td>{{ form.route_number.label_tag }}</td>
+                    <td>{{ form.route_number }}</td>
+                    <td class="invalid-feedback">{{ form.route_number.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.start_from.label_tag }}</td>
+                    <td>{{ form.start_from }}</td>
+                    <td class="invalid-feedback">{{ form.start_from.errors }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.end_from.label_tag }}</td>
+                    <td>{{ form.end_from }}</td>
+                    <td class="invalid-feedback">{{ form.end_from.errors }}</td>
+                </tr>
+            </table>
+            <!-- Submit button styled as a Bootstrap button -->
+            <button type="submit" class="btn btn-primary">Add ROUTES</button>
+        </form>
+    </div>
+    {% endblock %}
+    <!-- Include Bootstrap JS and any other scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
